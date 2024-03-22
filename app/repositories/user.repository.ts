@@ -1,19 +1,19 @@
-import { PrismaClient } from "@prisma/client/extension";
-const prisma = new PrismaClient();
+import { PrismaClient } from "@prisma/client";
 
-export const fetchAllUsers = async () => {
+const prisma = new PrismaClient();
+export const fetchAllUsersRepository = async () => {
   const users = await prisma.user.findMany();
   return users;
 };
 
-export const fetchUserByID = async (id: string) => {
+export const fetchUserByIDRepository = async (id: string) => {
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(id) },
+    where: { id: id },
   });
   return user;
 };
 
-export const createUser = async (
+export const createUserRepository = async (
   name: string,
   email: string,
   password: string
@@ -28,9 +28,13 @@ export const createUser = async (
   return user;
 };
 
-export const updateUser = async (id: string, name: string, email: string) => {
+export const updateUserRepository = async (
+  id: string,
+  name: string,
+  email: string
+) => {
   const user = await prisma.user.update({
-    where: { id: parseInt(id) },
+    where: { id: id },
     data: {
       name,
       email,
@@ -39,9 +43,9 @@ export const updateUser = async (id: string, name: string, email: string) => {
   return user;
 };
 
-export const deleteUser = async (id: string) => {
+export const deleteUserRepository = async (id: string) => {
   const user = await prisma.user.delete({
-    where: { id: parseInt(id) },
+    where: { id: id },
   });
   return user;
 };

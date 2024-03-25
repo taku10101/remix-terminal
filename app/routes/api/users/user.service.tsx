@@ -4,7 +4,7 @@ import {
   fetchAllUsersRepository,
   fetchUserByIDRepository,
   updateUserRepository,
-} from "../repositories/user.repository";
+} from "../../../repositories/user.repository";
 import { json } from "@remix-run/node";
 
 export const fetchAllUserService = async () => {

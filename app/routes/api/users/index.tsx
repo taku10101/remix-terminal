@@ -5,7 +5,7 @@ import {
   createUserService,
   updateUserService,
   deleteUserService,
-} from "../../../service/user.service";
+} from "./user.service";
 
 export const loader = async ({ params }: { params: { id?: string } }) => {
   if (params.id) {

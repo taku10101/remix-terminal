@@ -6,13 +6,13 @@ export default function UserNameInput() {
     formState: { errors },
   } = useFormContext();
 
+  const errorMessage: string = errors!.username!.message as string;
+
   return (
     <div>
       <label htmlFor='username'>ユーザー名</label>
       <input id='username' {...register("username")} />
-      {errors.password && typeof errors.password === "string" && (
-        <p>{errors.password}</p>
-      )}
+      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
 }

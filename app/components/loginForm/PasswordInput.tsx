@@ -1,8 +1,6 @@
-// PasswordInput.js
-import React from "react";
 import { useFormContext } from "react-hook-form";
 
-export default function PasswordInput() {
+export function PasswordInput() {
   const {
     register,
     formState: { errors },

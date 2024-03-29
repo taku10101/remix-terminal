@@ -1,8 +1,6 @@
-// UserNameInput.js
-import React from "react";
 import { useFormContext } from "react-hook-form";
 
-export default function UserNameInput() {
+export function UserNameInput() {
   const {
     register,
     formState: { errors },

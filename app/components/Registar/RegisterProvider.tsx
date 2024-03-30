@@ -2,12 +2,12 @@ import { useForm, FormProvider } from "react-hook-form";
 import { NameInput } from "../dataField/NameInput";
 import { PasswordInput } from "../dataField/PasswordInput";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema } from "./LoginSchema";
+import { registerSchema } from "./RegisterSchema";
 import { EmailInput } from "../dataField/EmailInput";
 
-export function LoginFormProvider() {
+export function RegisterProvider() {
   const methods = useForm({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(registerSchema),
   });
 
   const onSubmit = methods.handleSubmit((data) => {
@@ -20,7 +20,7 @@ export function LoginFormProvider() {
         <NameInput />
         <PasswordInput />
         <EmailInput />
-        <button type='submit'>ログイン</button>
+        <button type='submit'>新規登録</button>
       </form>
     </FormProvider>
   );

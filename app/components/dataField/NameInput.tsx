@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 
-export function UserNameInput() {
+export function NameInput() {
   const {
     register,
     formState: { errors },
@@ -8,9 +8,9 @@ export function UserNameInput() {
 
   return (
     <div>
-      <label htmlFor='username'>ユーザー名</label>
-      <input id='username' {...register("username")} />
-      {errors.username && <p>{errors.username.message as string}</p>}
+      <label htmlFor='name'>ユーザー名</label>
+      <input id='name' {...register("name")} />
+      {errors.username && <p>{errors.name!.message as string}</p>}
     </div>
   );
 }

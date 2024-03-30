@@ -2,7 +2,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { NameInput } from "../dataField/NameInput";
 import { PasswordInput } from "../dataField/PasswordInput";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema } from "./LoginSchema";
+import { loginSchema } from "../loginForm/LoginSchema";
 import { EmailInput } from "../dataField/EmailInput";
 
 export function LoginFormProvider() {

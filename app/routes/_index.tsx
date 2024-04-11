@@ -1,5 +1,4 @@
 import type { MetaFunction } from "@remix-run/node";
-import { LoginFormProvider } from "~/components/loginForm/LoginFormProvider";
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,7 +11,6 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
-      <LoginFormProvider />
     </div>
   );
 }

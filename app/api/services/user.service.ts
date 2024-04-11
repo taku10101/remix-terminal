@@ -15,7 +15,7 @@ export async function getAllUserService() {
   return res;
 }
 
-export async function getPostByIdService(id: string) {
+export async function getUserByIdService(id: string) {
   const res = await getUserByIdRepository(id);
   return res;
 }

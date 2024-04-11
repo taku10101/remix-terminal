@@ -1,7 +1,7 @@
 import {
-  CreatePostInterface,
-  UpdatePostInterface,
-} from "../interface/user.interface";
+  CreateUserInterface,
+  UpdateUserInterface,
+} from "../interface/user.interface ";
 import {
   getAllUserRepository,
   getUserByIdRepository,
@@ -20,12 +20,12 @@ export async function getPostByIdService(id: string) {
   return res;
 }
 
-export async function createUserService(data: CreatePostInterface) {
+export async function createUserService(data: CreateUserInterface) {
   const res = await createUserRepository(data);
   return res;
 }
 
-export async function updateUserService(id: string, data: UpdatePostInterface) {
+export async function updateUserService(id: string, data: UpdateUserInterface) {
   const res = await updateUserRepository(id, data);
   return res;
 }

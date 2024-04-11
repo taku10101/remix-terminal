@@ -5,11 +5,11 @@ import type {
 } from "../interface/user.interface ";
 
 const Prisma = new PrismaClient();
-export function getAllUser() {
+export function getAllUserRepository() {
   return Prisma.user.findMany();
 }
 
-export function getUserById(id: string) {
+export function getUserByIdRepository(id: string) {
   return Prisma.user.findUnique({
     where: {
       id,
@@ -17,13 +17,13 @@ export function getUserById(id: string) {
   });
 }
 
-export function createUser(data: CreateUserInterface) {
+export function createUserRepository(data: CreateUserInterface) {
   return Prisma.user.create({
     data,
   });
 }
 
-export function updateUser(id: string, data: UpdateUserInterface) {
+export function updateUserRepository(id: string, data: UpdateUserInterface) {
   return Prisma.user.update({
     where: {
       id,
@@ -32,7 +32,7 @@ export function updateUser(id: string, data: UpdateUserInterface) {
   });
 }
 
-export function deleteUser(id: string) {
+export function deleteUserRepository(id: string) {
   return Prisma.user.delete({
     where: {
       id,

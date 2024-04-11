@@ -1,11 +1,14 @@
 import { PrismaClient } from "@prisma/client";
-import type { CreatePostInterface } from "../interface/post.interface";
+import type {
+  CreatePostInterface,
+  UpdatePostInterface,
+} from "../interface/post.interface";
 const Prisma = new PrismaClient();
-export function getAllPost() {
+export function getAllPostRepository() {
   return Prisma.post.findMany();
 }
 
-export function getPostById(id: string) {
+export function getPostByIdRepository(id: string) {
   return Prisma.post.findUnique({
     where: {
       id,
@@ -13,13 +16,13 @@ export function getPostById(id: string) {
   });
 }
 
-export function createPost(data: CreatePostInterface) {
+export function createPostRepository(data: CreatePostInterface) {
   return Prisma.post.create({
     data,
   });
 }
 
-export function updatePost(id: string, data: CreatePostInterface) {
+export function updatePostRepository(id: string, data: UpdatePostInterface) {
   return Prisma.post.update({
     where: {
       id,
@@ -28,7 +31,7 @@ export function updatePost(id: string, data: CreatePostInterface) {
   });
 }
 
-export function deletePost(id: string) {
+export function deletePostRepository(id: string) {
   return Prisma.post.delete({
     where: {
       id,

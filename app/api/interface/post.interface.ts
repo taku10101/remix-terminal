@@ -3,3 +3,8 @@ export interface CreatePostInterface {
   content: string;
   authorId: string;
 }
+
+export interface UpdatePostInterface {
+  title?: string;
+  content?: string;
+}

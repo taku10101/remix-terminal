@@ -1,10 +1,10 @@
-export interface CreateUser {
+export interface CreateUserInterface {
   email: string;
   name: string;
   password: string;
 }
 
-export interface UpdateUser {
+export interface UpdateUserInterface {
   email?: string;
   name?: string;
   password?: string;

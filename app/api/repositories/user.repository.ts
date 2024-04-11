@@ -1,5 +1,8 @@
 import { PrismaClient } from "@prisma/client";
-import { CreateUser } from "../interface/user.interface";
+import type {
+  CreateUserInterface,
+  UpdateUserInterface,
+} from "../interface/user.interface ";
 
 const Prisma = new PrismaClient();
 export function getAllUser() {
@@ -14,13 +17,13 @@ export function getUserById(id: string) {
   });
 }
 
-export function createUser(data: CreateUser) {
+export function createUser(data: CreateUserInterface) {
   return Prisma.user.create({
     data,
   });
 }
 
-export function updateUser(id: string, data: CreateUser) {
+export function updateUser(id: string, data: UpdateUserInterface) {
   return Prisma.user.update({
     where: {
       id,

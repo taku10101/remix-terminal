@@ -11,21 +11,26 @@ import {
 } from "../repositories/post.repository";
 
 export async function getAllPostService() {
-  return getAllPostRepository();
+  const res = await getAllPostRepository();
+  return res;
 }
 
 export async function getPostByIdService(id: string) {
-  return getPostByIdRepository(id);
+  const res = await getPostByIdRepository(id);
+  return res;
 }
 
 export async function createPostService(data: CreatePostInterface) {
-  return createPostRepository(data);
+  const res = await createPostRepository(data);
+  return res;
 }
 
 export async function updatePostService(id: string, data: UpdatePostInterface) {
-  return updatePostRepository(id, data);
+  const res = await updatePostRepository(id, data);
+  return res;
 }
 
 export async function deletePostService(id: string) {
-  return deletePostRepository(id);
+  const res = await deletePostRepository(id);
+  return res;
 }
